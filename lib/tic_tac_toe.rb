@@ -102,7 +102,7 @@ def over?(board)
 end
 
 def winner(board)
-  if (over?(board) && !draw?(board))
+  if (over?(board))
     win_combination = won?(board)
     if (board[win_combination[0]] == "X")
       return "X"
@@ -116,8 +116,16 @@ end
 
 def play(board)
   round = 0
+  winner = nil
   while (round < 9)
     turn(board)
     round += 1
+  end
+  
+  winner = winner(board)
+  if (winner != nil)
+    puts "#{winner} has won!"
+  else
+    puts "It's a draw!"
   end
 end
