@@ -121,7 +121,7 @@ def play(board)
     turn(board)
     round += 1
   end
-  
+
   winner = winner(board)
   if (winner != nil)
     puts "#{winner} has won!"
