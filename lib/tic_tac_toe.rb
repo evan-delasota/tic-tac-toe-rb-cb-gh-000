@@ -115,13 +115,8 @@ def winner(board)
 end
 
 def play(board)
-  round = 0
-  while (round < 9)
+  while (!over?(board))
     turn(board)
-    round += 1
-    if over?(board)
-      break
-    end
   end
 
   winner = winner(board)
