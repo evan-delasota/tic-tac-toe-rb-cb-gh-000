@@ -15,7 +15,7 @@ def input_to_index(user_input)
     user_input.to_i - 1
 end
 
-def move(board, index, current_player = "X")
+def move(board, index, current_player = current_player(board))
     board[index] = current_player
 end
 
@@ -116,10 +116,12 @@ end
 
 def play(board)
   round = 0
-  winner = nil
   while (round < 9)
     turn(board)
     round += 1
+    if over?(board)
+      break
+    end
   end
 
   winner = winner(board)
