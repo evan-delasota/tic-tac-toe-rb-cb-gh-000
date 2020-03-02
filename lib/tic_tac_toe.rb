@@ -115,10 +115,10 @@ def winner(board)
 end
 
 def play(board)
-  loop do
+  game_status = false
+  while (game_status == false) do
     turn(board)
-    if (!over?(board))
-      break
+    game_status = over?(board)
     end
   end
 
