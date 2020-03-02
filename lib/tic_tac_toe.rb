@@ -119,7 +119,6 @@ def play(board)
   while (game_status == false)
     turn(board)
     game_status = over?(board)
-    end
   end
 
   winner = winner(board)
