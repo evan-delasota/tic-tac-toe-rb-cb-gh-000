@@ -115,8 +115,11 @@ def winner(board)
 end
 
 def play(board)
-  while (!over?(board))
+  loop do
     turn(board)
+    if (!over?(board))
+      break
+    end
   end
 
   winner = winner(board)
