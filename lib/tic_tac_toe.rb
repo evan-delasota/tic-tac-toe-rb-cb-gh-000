@@ -115,15 +115,12 @@ def winner(board)
 end
 
 def play(board)
-  game_status = false
-  while (game_status == false)
+  until (over?(board) == true)
     turn(board)
-    game_status = over?(board)
   end
 
-  winner = winner(board)
-  if (winner != nil)
-    puts "Congratulations #{winner}!"
+  if (won?(board))
+    puts "Congratulations #{winner(board)}!"
   else
     puts "Cat's Game!"
   end
