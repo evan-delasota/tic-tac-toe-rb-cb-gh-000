@@ -116,7 +116,7 @@ end
 
 def play(board)
   game_status = false
-  while (game_status == false) do
+  while (game_status == false)
     turn(board)
     game_status = over?(board)
     end
